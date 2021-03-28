@@ -3,6 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include_once('libs/views.php');
+use Libs\View as View;
 
 class Router{
 
@@ -14,8 +15,10 @@ class Router{
             $routes  = $_SERVER['REQUEST_URI'];
             $paths = explode('/', $routes);
             array_shift($paths);
+            unset($paths[0]);
+            $path =  implode("/", $paths);
 
-            if($paths[1] == $routePath){
+            if($path == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -31,8 +34,10 @@ class Router{
             $routes  = $_SERVER['REQUEST_URI'];
             $paths = explode('/', $routes);
             array_shift($paths);
-    
-            if($paths[1] == $routePath){
+            unset($paths[0]);
+            $path =  implode("/", $paths);
+
+            if($path == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
         }
@@ -47,8 +52,10 @@ class Router{
             $routes  = $_SERVER['REQUEST_URI'];
             $paths = explode('/', $routes);
             array_shift($paths);
-    
-            if($paths[1] == $routePath){
+            unset($paths[0]);
+            $path =  implode("/", $paths);
+
+            if($path == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -64,8 +71,10 @@ class Router{
             $routes  = $_SERVER['REQUEST_URI'];
             $paths = explode('/', $routes);
             array_shift($paths);
-    
-            if($paths[1] == $routePath){
+            unset($paths[0]);
+            $path =  implode("/", $paths);
+
+            if($path == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -81,8 +90,10 @@ class Router{
             $routes  = $_SERVER['REQUEST_URI'];
             $paths = explode('/', $routes);
             array_shift($paths);
-    
-            if($paths[1] == $routePath){
+            unset($paths[0]);
+            $path =  implode("/", $paths);
+
+            if($path == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -98,8 +109,10 @@ class Router{
             $routes  = $_SERVER['REQUEST_URI'];
             $paths = explode('/', $routes);
             array_shift($paths);
-            
-            if($paths[1] == $routePath){
+            unset($paths[0]);
+            $path =  implode("/", $paths);
+
+            if($path == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -117,8 +130,10 @@ class Router{
             $routes  = $_SERVER['REQUEST_URI'];
             $paths = explode('/', $routes);
             array_shift($paths);
-            
-            if($paths[1] == $routePath){
+            unset($paths[0]);
+            $path =  implode("/", $paths);
+
+            if($path == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -134,12 +149,12 @@ class Router{
         $routes  = $_SERVER['REQUEST_URI'];
         $paths = explode('/', $routes);
         array_shift($paths);
-        
-        if($paths[1] == $routePath){
-            $view = new View();
-            $loadView = $view;
-            $loadView->render($routeView);
-        } 
+        unset($paths[0]);
+        $path =  implode("/", $paths);
+
+        if($path == $routePath){
+            View::render($routeView);
+        }
     }
 }
     
