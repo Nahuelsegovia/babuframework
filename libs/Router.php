@@ -16,9 +16,7 @@ class Router{
             $paths = explode('/', $routes);
             array_shift($paths);
             unset($paths[0]);
-            $path =  implode("/", $paths);
-
-            if($path == $routePath){
+            if($paths == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -35,9 +33,7 @@ class Router{
             $paths = explode('/', $routes);
             array_shift($paths);
             unset($paths[0]);
-            $path =  implode("/", $paths);
-
-            if($path == $routePath){
+            if($paths == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
         }
@@ -53,9 +49,7 @@ class Router{
             $paths = explode('/', $routes);
             array_shift($paths);
             unset($paths[0]);
-            $path =  implode("/", $paths);
-
-            if($path == $routePath){
+            if($paths == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -72,9 +66,7 @@ class Router{
             $paths = explode('/', $routes);
             array_shift($paths);
             unset($paths[0]);
-            $path =  implode("/", $paths);
-
-            if($path == $routePath){
+            if($paths == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -91,9 +83,7 @@ class Router{
             $paths = explode('/', $routes);
             array_shift($paths);
             unset($paths[0]);
-            $path =  implode("/", $paths);
-
-            if($path == $routePath){
+            if($paths == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -110,9 +100,7 @@ class Router{
             $paths = explode('/', $routes);
             array_shift($paths);
             unset($paths[0]);
-            $path =  implode("/", $paths);
-
-            if($path == $routePath){
+            if($paths == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -131,9 +119,7 @@ class Router{
             $paths = explode('/', $routes);
             array_shift($paths);
             unset($paths[0]);
-            $path =  implode("/", $paths);
-
-            if($path == $routePath){
+            if($paths == $routePath){
                 include_once('controllers/'.$routeController.'');
             }
 
@@ -150,9 +136,7 @@ class Router{
         $paths = explode('/', $routes);
         array_shift($paths);
         unset($paths[0]);
-        $path =  implode("/", $paths);
-
-        if($path == $routePath){
+        if($paths == $routePath){
             View::render($routeView);
         }
     }
